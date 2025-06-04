@@ -2,37 +2,29 @@ name: Deploy Azure Function App
 
 on:
   push:
-    paths:
-      - 'backend/**'
     branches:
-      - main
+      - main   # or your branch name
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # or your Node.js version
 
-      - name: Install dependencies
-        run: |
-          cd backend
-          npm install
+    - name: Install dependencies
+      run: |
+        cd backend
+        npm install
 
-      - name: Zip backend
-        run: |
-          cd backend
-          zip -r ../function.zip .
-
-      - name: Deploy to Azure Function App
-        uses: azure/functions-action@v1
-        with:
-          app-name: chinmay-visitor-counter   # 👈 Replace with your Azure Function App name
-          package: function.zip
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+    - name: Deploy to Azure Functions
+      uses: Azure/functions-action@v1
+      with:
+        app-name: chinmay-visitor-counter     # replace with your Azure Function App name
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        package: ./backend
