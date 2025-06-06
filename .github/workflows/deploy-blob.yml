@@ -10,22 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Azure CLI Login (optional but recommended for troubleshooting)
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}  # optional, only if you use login-based
+    - name: Install Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-      - name: Upload to Azure Blob Storage
-        uses: azure/cli@v1
-        with:
-          inlineScript: |
-            echo "Uploading files to Azure Storage Account: ${{ secrets.AZURE_STORAGE_ACCOUNT }}"
-            az storage blob upload-batch \
-              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
-              --account-key ${{ secrets.AZURE_STORAGE_KEY }} \
-              --destination \$web \
-              --source ./frontend \
-              --overwrite
+    - name: Deploy to Azure Blob Storage
+      run: |
+        az storage blob upload-batch \
+          --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+          --account-key ${{ secrets.AZURE_STORAGE_KEY }} \
+          --destination \$web \
+          --source ./frontend \
+          --overwrite
