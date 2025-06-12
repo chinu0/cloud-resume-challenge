@@ -44,3 +44,6 @@ module.exports = async function (context, req) {
     };
   }
 };
+
+
+// terraform deploy
