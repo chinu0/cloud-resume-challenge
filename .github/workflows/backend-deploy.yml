@@ -3,7 +3,7 @@ name: Deploy Azure Function App
 on:
   push:
     branches:
-      - main   # or your branch name
+      - main
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v3
       with:
-        node-version: '16'  # or your Node.js version
+        node-version: '16'
 
     - name: Install dependencies
       run: |
@@ -25,6 +25,6 @@ jobs:
     - name: Deploy to Azure Functions
       uses: Azure/functions-action@v1
       with:
-        app-name: chinmay-visitor-counter     # replace with your Azure Function App name
+        app-name: chinmay-visitor-counter
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-        package: ./backend
+        package: ./backend   # This should point to the folder containing host.json
