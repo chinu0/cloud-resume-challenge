@@ -1,23 +1,33 @@
-name: Deploy Node.js project to Azure Function App
+name: Deploy Node.js Azure Function App using OIDC
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
-  AZURE_FUNCTIONAPP_NAME: 'chinmay-visitor-counter'   # ✅ Your actual Azure Function App name
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './backend'         # ✅ Must point to folder with host.json
+  AZURE_FUNCTIONAPP_NAME: 'chinmay-visitor-counter'   # ✅ Your Function App name
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './backend'         # ✅ Folder that contains host.json
   NODE_VERSION: '16.x'
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
-    environment: dev
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Login to Azure using OIDC
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: Setup Node.js ${{ env.NODE_VERSION }}
       uses: actions/setup-node@v3
@@ -25,15 +35,12 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
 
     - name: Install dependencies
-      shell: pwsh
       run: |
-        pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         npm install
-        popd
 
-    - name: Deploy to Azure Functions
+    - name: Deploy to Azure Function App
       uses: Azure/functions-action@v1
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
