@@ -27,4 +27,4 @@ jobs:
       with:
         app-name: chinmay-visitor-counter
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-        package: ./backend   # This should point to the folder containing host.json
+        package: ./backend   # Folder that must contain host.json
