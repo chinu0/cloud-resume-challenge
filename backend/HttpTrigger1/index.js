@@ -1,7 +1,8 @@
 const { CosmosClient } = require("@azure/cosmos");
 
 // Use your Cosmos DB connection string as an environment variable for security
-const connectionString = process.env.COSMOS_DB_CONNECTION_STRING;
+// const connectionString = process.env.COSMOS_DB_CONNECTION_STRING;
+const connectionString = process.env["CUSTOMCONNSTR_CosmosDBConnectionString"];
 
 const client = new CosmosClient(connectionString);
 
@@ -44,6 +45,3 @@ module.exports = async function (context, req) {
     };
   }
 };
-
-
-// kk
