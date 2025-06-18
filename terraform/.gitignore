@@ -1,0 +1,19 @@
+# Local Terraform folder
+.terraform/
+
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.*
+*.tfstate
+*.tfstate.*
+
+# Backup files
+*.backup
+
+# Plan output files
+*.tfplan
+
+# Executables (e.g., Windows)
+*.exe
+terraform.exe
+terraform
