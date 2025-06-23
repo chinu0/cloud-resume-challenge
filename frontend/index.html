@@ -2,82 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chinmay Das - Resume</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinmay Das - Resume Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <div class="background-blur"></div>
-
   <div class="container">
+    <!-- Header -->
+    <div class="glass-card header-card">
+      <h1 class="name">Chinmay Das</h1>
+<h3 style="color: #8fd3f4; margin-bottom: 8px;">Technical Support Engineer</h3>
+<p style="font-size: 1rem; color: #ccc; margin-bottom: 10px;">
+  Aspiring DevOps & Cloud Engineer. Skilled in automation and cloud platforms, and passionate about building scalable systems and improving infrastructure efficiency.
+</p>
 
-    <header class="hero">
-      <img src="profile.jpg" alt="Chinmay Das" class="profile-pic" />
-      <div class="intro">
-        <h1>Chinmay Das</h1>
-        <p>
-          <a href="mailto:chinudas43@gmail.com">chinudas43@gmail.com</a> |
-          <a href="https://www.linkedin.com/in/chinmay-das-3a6700145/" target="_blank">LinkedIn</a> |
-          <a href="tel:+918296707553">+91 8296707553</a>
-        </p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span>📧</span><a href="mailto:chinudas43@gmail.com">chinudas43@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>💼</span><a href="https://www.linkedin.com/in/chinmay-das-3a6700145/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="contact-item">
+          <span>📞</span><span>+91 8296707553</span>
+        </div>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <section>
-        <h2>Education</h2>
-        <ul>
-          <li><strong>New Horizon College of Engineering, Bangalore</strong> — MCA (Oct 2017 – Oct 2020)</li>
-          <li><strong>Burdwan Raj College, Burdwan</strong> — B.Sc Honours (Sep 2014 – Sep 2017)</li>
-        </ul>
-      </section>
+    <div class="main-content">
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Education -->
+        <div class="glass-card">
+          <h2 class="section-title">🎓 Education</h2>
+          <div class="education-item">
+            <h3>New Horizon College of Engineering</h3>
+            <div class="location">Bangalore</div>
+            <div class="degree">MCA</div>
+            <div class="date">Oct 2017 – Oct 2020</div>
+          </div>
+          <div class="education-item">
+            <h3>Burdwan Raj College</h3>
+            <div class="location">Burdwan</div>
+            <div class="degree">B.Sc Honours</div>
+            <div class="date">Sep 2014 – Sep 2017</div>
+          </div>
+        </div>
 
-      <section>
-        <h2>Technical Skills</h2>
-        <ul>
-          <li><strong>Tools:</strong> Docker, AWS, Azure, Jenkins</li>
-          <li><strong>Software:</strong> JIRA, GitHub, Confluence</li>
-          <li><strong>Monitoring:</strong> Prometheus, Grafana, Nagios</li>
-          <li><strong>Languages:</strong> SQL, Python, Shell</li>
-          <li><strong>Databases:</strong> Microsoft SQL Server, MongoDB</li>
-        </ul>
-      </section>
+        <!-- Skills -->
+        <div class="glass-card">
+          <h2 class="section-title">⚡ Technical Skills</h2>
+          <div class="skill-category">
+            <h4>Tools</h4>
+            <div class="skills-grid">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Azure</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">GCP</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Software</h4>
+            <div class="skills-grid">
+              <span class="skill-tag">JIRA</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Confluence</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Monitoring</h4>
+            <div class="skills-grid">
+              <span class="skill-tag">Prometheus</span>
+              <span class="skill-tag">Grafana</span>
+              <span class="skill-tag">Nagios</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Programming</h4>
+            <div class="skills-grid">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Shell</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Database</h4>
+            <div class="skills-grid">
+              <span class="skill-tag">MS SQL Server</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <section>
-        <h2>Business Experiences</h2>
-        <h3>Avlino – <span class="subheading">Technical Support Engineer (Dec 2023 – Present)</span></h3>
-        <ul>
-          <li>Reduced Linux support tickets by 20%</li>
-          <li>Worked with Shell, Python, Azure, AWS</li>
-          <li>Deployed scalable apps using Docker</li>
-          <li>Enhanced documentation and monitoring with Prometheus, Grafana, Nagios</li>
-        </ul>
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Experience -->
+        <div class="glass-card">
+          <h2 class="section-title">💼 Experience</h2>
+          <div class="experience-item">
+            <div class="company-header">
+              <div>
+                <div class="company-name">Avlino</div>
+                <div class="position">Technical Support Engineer</div>
+                <div class="location">Bangalore, India</div>
+              </div>
+              <div class="duration" style="padding: 3px 8px; border-radius: 12px; font-size: 0.85rem; background: rgba(50,115,220,0.8); color: #fff; white-space: nowrap;">
+                Dec 2023 - Present
+              </div>
+            </div>
+            <ul class="achievements">
+              <li>Reduced Linux support tickets by 20%.</li>
+              <li>Worked with Shell, Python, Azure, AWS, GCP.</li>
+              <li>Deployed scalable apps using Docker.</li>
+              <li>Enhanced CI/CD; implemented Prometheus, Grafana, Nagios.</li>
+            </ul>
+          </div>
 
-        <h3>Amazon – <span class="subheading">Digital Associate (Jun 2021 – Apr 2023)</span></h3>
-        <h4>Handshake Project</h4>
-        <ul>
-          <li>95% ML model accuracy with 10,000+ samples</li>
-          <li>Improved training time by 25%</li>
-        </ul>
-        <h4>Textract Project</h4>
-        <ul>
-          <li>15% increase in retention from data analysis</li>
-          <li>25% product satisfaction boost via feedback</li>
-        </ul>
-      </section>
+          <div class="experience-item">
+            <div class="company-header">
+              <div>
+                <div class="company-name">Amazon</div>
+                <div class="position">Associate</div>
+                <div class="location">Chennai, India</div>
+              </div>
+              <div class="duration" style="padding: 3px 8px; border-radius: 12px; font-size: 0.85rem; background: rgba(50,115,220,0.8); color: #fff; white-space: nowrap;">
+                Jun 2021 - Apr 2023
+              </div>
+            </div>
+            <div class="project-section">
+              <div class="project-title">Handshake Project</div>
+              <ul class="achievements">
+                <li>CI/CD using GitHub streamlined releases.</li>
+                <li>Python scripts improved ML model accuracy by 15%.</li>
+                <li>Reduced training time by 25%.</li>
+              </ul>
+            </div>
+            <div class="project-section">
+              <div class="project-title">Textract Project</div>
+              <ul class="achievements">
+                <li>Analyzed data using Excel, improving retention by 15%.</li>
+                <li>Customer satisfaction increased by 25%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-      <section>
-        <h2>Academic Project</h2>
-        <p><strong>HRInsight - HR Domain.com (Power BI, Excel):</strong> Designed a dashboard saving 3–4 hours/day for HR teams.</p>
-        <p>ci cd working</p>
-      </section>
-    </main>
+        <!-- Academic Project -->
+        <div class="glass-card">
+          <h2 class="section-title">🚀 Academic Project</h2>
+          <div class="academic-project">
+            <div class="project-header" style="display:flex; justify-content:space-between; align-items:center;">
+              <a href="https://github.com/chinu0/hrinsight" target="_blank" rel="noopener" class="project-name" style="color: #2e6ccf; font-weight: 600; text-decoration: underline;">
+                HRInsights - HR Domain
+              </a>
+              <div class="duration" style="padding: 3px 8px; border-radius: 12px; font-size: 0.85rem; background: rgba(50,115,220,0.8); color: #fff; white-space: nowrap;">
+                Jan 2018
+              </div>
+            </div>
+            <div class="tech-stack" style="margin: 8px 0;">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+            <ul class="achievements">
+              <li>Created Power BI dashboard for HR insights.</li>
+              <li>Saved 3–4 hours daily workload for HR team.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <footer>
+    <!-- Let's Connect Section
+    <div class="glass-card" style="margin-top: 30px;">
+      <h2 class="section-title">💬 Let’s Connect</h2>
+      <p>🚀 Ready to discuss opportunities and collaborate on exciting projects.</p>
+      <p>🚀 <strong>Open to Opportunities</strong> — Looking for challenging roles in <em>DevOps</em>, <em>Cloud Computing</em>, and <em>SRE</em>.</p>
+    </div> -->
+
+    <!-- Footer -->
+    <footer style="margin-top: 20px; text-align: center; color: #ddd; font-size: 0.9rem;">
       <p>This resume has been viewed <span id="visitor-count">...</span> times.</p>
     </footer>
-
   </div>
 
   <script src="visitorCount.js"></script>
